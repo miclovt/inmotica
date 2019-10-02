@@ -1,5 +1,34 @@
 <div class="chartscontainer">
+    <h1>Departamento #{{idDep}}</h1>
     <h2>Humedad</h2>
+    <div>
+        <div style="display: block">
+            <canvas baseChart
+            [datasets]="HumedadChartData"
+            [colors]="[
+            { 
+              backgroundColor: 'rgba(148,159,177,0.2)',
+              borderColor: 'rgba(148,159,177,1)',
+              pointBackgroundColor: 'rgba(148,159,177,1)',
+              pointBorderColor: '#fff',
+              pointHoverBackgroundColor: '#fff',
+              pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+            }]"
+            [labels]="HumedadChartLabels"
+            [options]="HumedadChartOptions"
+            [plugins]="HumedadChartPlugins"
+            [legend]="HumedadChartLegend"
+            [chartType]="HumedadChartType">
+          </canvas>
+        </div>
+      </div>
     <h2>Gas</h2>
-    <h2>Iluminacion</h2>
+    <rg-gauge-chart
+    [canvasWidth]="canvasWidth"
+    [needleValue]="needleValue"
+    [centralLabel]="centralLabel"
+    [options]="options"
+    [name]="name"
+    [bottomLabel]="bottomLabel"></rg-gauge-chart>
+    
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-deps',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DepsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+  }
+
+  selectDep(idDep: number) {
+    this.data.changeDep(idDep);
+    console.log(this.data.currentDep);
   }
 
 }
